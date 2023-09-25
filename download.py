@@ -60,7 +60,7 @@ canvas = Canvas(screen, width=500, height=500)
 canvas.pack()
 
 #image Logo
-logo_imp = PhotoImage(file='Yt.png')
+logo_imp = PhotoImage(file='img/Yt.png')
 #resize
 logo_imp = logo_imp.subsample(8,8)
 canvas.create_image(250, 80, image=logo_imp)
