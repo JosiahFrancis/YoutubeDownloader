@@ -2,8 +2,6 @@
 
 from tkinter import *
 from tkinter import filedialog
-from moviepy import *
-#from moviepy.editor import VideoFileClip
 from moviepy.video.io.VideoFileClip import VideoFileClip
 from pytube import YouTube
 
@@ -32,7 +30,8 @@ def download_file():
     else:
         screen.title('Downloading...')
         #Download video
-        mp4_video = YouTube(get_link).streams.get_highest_resolution.download(os.getcwd())
+        # mp4_video = YouTube(get_link).streams.get_highest_resolution.download(os.getcwd())
+        mp4_video = YouTube(get_link).streams.filter(file_extension='mp4').get_highest_resolution().download()
         vid_clip = VideoFileClip(mp4_video)
         vid_clip.close()
         #Move file to selected directory
